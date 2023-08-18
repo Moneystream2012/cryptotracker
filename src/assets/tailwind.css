@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-neutral-50 dark:bg-neutral-900 font-grotesk text-center text-neutral-600 dark:text-neutral-200;
+}
+
+.route-enter-from, 
+.route-leave-to {
+  @apply opacity-0;
+}
+
+.route-enter-active,
+.route-leave-active {
+  @apply ease-out duration-300 transition-opacity;
+}
+
+.router-link-active.router-link-exact-active {
+  @apply font-medium text-purple-600 dark:text-white;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-enter-active {
+  animation: fade 300ms ease-in-out;
+}
+  
+.fade-leave-to {
+  @apply opacity-0;
+}
+
+.fade-leave-active {
+  @apply duration-300 ease-in-out transition;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.slide-in-enter-active {
+  animation: slide-in 300ms ease-in-out;
+}
+
+.slide-in-leave-active {
+  animation: slide-in 300ms ease-in-out alternate-reverse;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
